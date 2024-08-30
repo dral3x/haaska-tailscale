@@ -8,7 +8,7 @@ done
 echo Tailscale started
 
 if [ -z "${AWS_LAMBDA_RUNTIME_API}" ]; then
-  exec env ALL_PROXY="socks5://localhost:1055/" /usr/local/bin/aws-lambda-rie /var/lang/bin/python3.6 -m awslambdaric $@
+  exec env ALL_PROXY="socks5://localhost:1055/" /usr/local/bin/aws-lambda-rie /var/lang/bin/python3 -m awslambdaric $@
 else
-  exec env ALL_PROXY="socks5://localhost:1055/" /var/lang/bin/python3.6 -m awslambdaric $@
+  exec env ALL_PROXY="socks5://localhost:1055/" /var/lang/bin/python3 -m awslambdaric $@
 fi     
